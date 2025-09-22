@@ -1,5 +1,5 @@
 # metagenomic_shotgun
-metagenomics_wallp](https://github.com/user-attachments/assets/e0cd4e1f-ed94-4725-b03f-f981e1080e29)
+[metagenomics_wallp](https://github.com/user-attachments/assets/e0cd4e1f-ed94-4725-b03f-f981e1080e29)
 
 
 This pipeline was constructed for de novo assembly of transcriptome research for a non-model organism.
