@@ -7,7 +7,7 @@ This was equally contributor by:
 
 Gutiérrez-Sarmiento Wilbert [wilbertgtzs@gmail.com] [https://github.com/WilbertGtzS]  
 
-Fosado-Mendoza Mayela [maye.fosado@gmail.com] []
+Fosado-Mendoza Mayela [maye.fosado@gmail.com] [https://github.com/Mayfm]
 
 Alfredo Varela-Echavarría [avarela@unam.mx] []
 
