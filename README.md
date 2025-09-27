@@ -24,6 +24,22 @@ spades/4.2.0
 prodigal/2.6.3
 eggnog-mapper-2.1.13 
 
+## Herramientas Bioinformáticas
+
+A continuación, se detallan las herramientas utilizadas junto con sus versiones específicas:
+- [`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) `v0.11.3`
+- [`Trimmomatic`](http://www.usadellab.org/cms/?page=trimmomatic) `v0.39`
+- [`Kraken`](https://ccb.jhu.edu/software/kraken2/) `v2.0.8-beta`
+- [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`  
+  _Requiere_:  
+  - Trimmomatic `v0.33`  
+  - Bowtie `v2.5.4`  
+  - TRF `v4.09.1`
+- [`SPAdes`](https://cab.spbu.ru/software/spades/) `v4.2.0`
+- [`Prodigal`](https://github.com/hyattpd/Prodigal) `v2.6.3`
+- [`eggNOG-mapper`](http://eggnog-mapper.embl.de/) `v2.1.13`
+
+
 
 # FastQC script
 module load fastqc/0.11.3
