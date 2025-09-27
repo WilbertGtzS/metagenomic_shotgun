@@ -15,7 +15,7 @@ This is an example of workflow considering the next number of samples of an expe
 
 
 
-#!/bin/bash
+
 # FastQC script
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
