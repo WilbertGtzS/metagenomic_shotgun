@@ -19,7 +19,7 @@ This is an example of workflow considering the next number of samples of an expe
 Below, there are the bioinformatic tools and it's respective used version:
 - [`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) `v0.11.3`
 - [`Trimmomatic`](http://www.usadellab.org/cms/?page=trimmomatic) `v0.39`
-- [`Kraken`](https://ccb.jhu.edu/software/kraken2/) `v2.0.8-beta`
+- [`Kraken2`](https://ccb.jhu.edu/software/kraken2/) `v2.0.8-beta`
 - [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`  
   _Requiere_:  
   - Trimmomatic `v0.33`  
