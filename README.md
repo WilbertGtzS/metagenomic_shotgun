@@ -45,3 +45,5 @@ A continuación, se detallan las herramientas utilizadas junto con sus versiones
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
 fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
+
+<pre lang="bash"> ```bash fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq ``` </pre>
