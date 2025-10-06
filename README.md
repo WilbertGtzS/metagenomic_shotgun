@@ -21,21 +21,30 @@ This is an example of workflow considering the next number of samples of an expe
 Below, there are the bioinformatic tools and it's respective used version:
 - [`FastQC`](https://www.bioinformatics.babraham.ac.uk/projects/fastqc/) `v0.11.3`
 - [`Trimmomatic`](http://www.usadellab.org/cms/?page=trimmomatic) `v0.39`
-- [`Kraken2`](https://ccb.jhu.edu/software/kraken2/) `v2.0.8-beta`
-- [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`  
+- [`Cutadapt`]() `v0.00`
+- [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`
   _Requiere_:  
   - Trimmomatic `v0.33`  
   - Bowtie `v2.5.4`  
-  - TRF `v4.09.1`
+  - TRF `v4.09.1` 
+- [`Kraken2`](https://ccb.jhu.edu/software/kraken2/) `v2.0.8-beta`
 - [`SPAdes`](https://cab.spbu.ru/software/spades/) `v4.2.0`
 - [`Prodigal`](https://github.com/hyattpd/Prodigal) `v2.6.3`
-- [`eggNOG-mapper`](http://eggnog-mapper.embl.de/) `v2.1.13`
+- [`eggNOG`](http://eggnog-mapper.embl.de/) `v2.1.13`
 
 
 
-# FastQC script
+# FastQC
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
 fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 
 <pre lang="bash"> fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq </pre>
+
+# Trimmomatic
+# Cutadapt
+# KneadData
+# Kraken2
+# SPAdes
+# Prodigal
+# eggNOG
