@@ -51,8 +51,10 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 # 5Kraken2
 # 6SPAdes
 # 7Prodigal
+<pre lang="bash"> module load prodigal/2.6.3 </pre>
+<pre lang="bash"> prodigal -i /mnt/data/alfredvar/wgutierrez/5metaspades/BC59/contigs.fasta \
+              -a proteins_BC59.faa -d genes_BC59.fna -f gff -o prodigal_BC59.gff -p meta </pre>
 # 8eggNOG
-
 <pre lang="bash"> module load anaconda3/2025.06 </pre>
 <pre lang="bash">source activate eggnog-mapper-2.1.13 </pre>
 <pre lang="bash"> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
