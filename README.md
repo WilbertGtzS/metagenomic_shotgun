@@ -61,6 +61,13 @@ trimmomatic PE -threads 2 \
    ILLUMINACLIP:TruSeq3_Illumina.fa:2:30:10 LEADING:30 TRAILING:30 SLIDINGWINDOW:4:25 MINLEN:50
 
 # 3Cutadapt
+
+module load anaconda3/2025.06
+source activate cutadapt-5.1
+
+cutadapt -u 9 -o C1_R1_cut.fastq ../3trimmomatic/trimmed_C1_R1.paired.fq.gz
+cutadapt -u 9 -o C1_R2_cut.fastq ../3trimmomatic/trimmed_C1_R2.paired.fq.gz
+
 # 4KneadData
 module load anaconda3/2025.06
 source activate kneaddata-0.12.3
