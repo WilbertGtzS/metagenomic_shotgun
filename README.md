@@ -34,17 +34,27 @@ Below, there are the bioinformatic tools and it's respective used version:
 
 
 
-# FastQC
+# 1FastQC
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
 fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
 <pre lang="bash"> fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq </pre>
 
-# Trimmomatic
-# Cutadapt
-# KneadData
-# Kraken2
-# SPAdes
-# Prodigal
-# eggNOG
+# 2Trimmomatic
+#trimmomatic PE ../1raw/"${base}"*_R1.fastq /1raw/"${base}"*_R2.fastq /1raw/"${base}"_R1.trimmed_PE.fastq /1raw/"${base}"_R1.trimmed_SE.fastq /1raw/"${base}"_R2.trimmed_PE.fastq /1raw/"${base}"_R2.trimmed_SE.fastq SLIDINGWINDOW:4:28 MINLEN:50
+
+
+
+# 3Cutadapt
+# 4KneadData
+# 5Kraken2
+# 6SPAdes
+# 7Prodigal
+# 8eggNOG
+
+</pre> module load anaconda3/2025.06 </pre>
+</pre> source activate eggnog-mapper-2.1.13 </pre>
+</pre> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
+
+
