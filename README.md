@@ -38,7 +38,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
 fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
-
+<pre lang="bash"> module load fastqc/0.11.3 </pre>
 <pre lang="bash"> fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq </pre>
 
 # Trimmomatic
