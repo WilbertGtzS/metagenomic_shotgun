@@ -53,8 +53,8 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 # 7Prodigal
 # 8eggNOG
 
-</pre> module load anaconda3/2025.06 </pre>
-</pre> source activate eggnog-mapper-2.1.13 </pre>
-</pre> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
+<pre lang="bash"> module load anaconda3/2025.06 </pre>
+<pre lang="bash">source activate eggnog-mapper-2.1.13 </pre>
+<pre lang="bash"> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
 
 
