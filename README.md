@@ -42,14 +42,56 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 <pre lang="bash"> fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq </pre>
 
 # 2Trimmomatic
-#trimmomatic PE ../1raw/"${base}"*_R1.fastq /1raw/"${base}"*_R2.fastq /1raw/"${base}"_R1.trimmed_PE.fastq /1raw/"${base}"_R1.trimmed_SE.fastq /1raw/"${base}"_R2.trimmed_PE.fastq /1raw/"${base}"_R2.trimmed_SE.fastq SLIDINGWINDOW:4:28 MINLEN:50
 
+TruSeq3_Illumina.fa
+>PrefixPE/1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PrefixPE/2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 
+trimmomatic PE ../1raw/"${base}"*_R1.fastq /1raw/"${base}"*_R2.fastq /1raw/"${base}"_R1.trimmed_PE.fastq /1raw/"${base}"_R1.trimmed_SE.fastq /1raw/"${base}"_R2.trimmed_PE.fastq /1raw/"${base}"_R2.trimmed_SE.fastq SLIDINGWINDOW:4:28 MINLEN:50
+
+trimmomatic PE -threads 2 \
+   ../2rcorrector/unfixrm_C1_S36_R1_001.cor.fq \
+   ../2rcorrector/unfixrm_C1_S36_R2_001.cor.fq \
+   trimmed_C1_R1.paired.fq.gz \
+   trimmed_C1_R1.unpaired.fq.gz \
+   trimmed_C1_R2.paired.fq.gz \
+   trimmed_C1_R2.unpaired.fq.gz \
+   ILLUMINACLIP:TruSeq3_Illumina.fa:2:30:10 LEADING:30 TRAILING:30 SLIDINGWINDOW:4:25 MINLEN:50
 
 # 3Cutadapt
 # 4KneadData
+module load anaconda3/2025.06
+source activate kneaddata-0.12.3
+module load trimmomatic/0.33
+module load bowtie/2.5.4
+module load trf/4.09.1
+
+ kneaddata \
+          -i1 "$R1" \
+          -i2 "$R2" \
+          -o "$SAMPLE_OUT" \
+          -db "$DB_PATH" \
+          -t "$THREADS" \
+          --output-prefix "$BASE" \
+          --remove-intermediate-output \
+          --log "$SAMPLE_OUT/${BASE}_kneaddata.log" \
+          --trf /mnt/data/alfredvar/wgutierrez/trf_link
+
+
 # 5Kraken2
+
+
 # 6SPAdes
+
+module load spades/4.2.0
+metaspades.py  --only-assembler        -1      SRR15909356_paired_1.fastq      -2      SRR15909356_paired_2.fastq      -o      SRR15909356     -t 16   -m 200
+metaspades.py  --only-assembler        -1      SRR16036425_paired_1.fastq      -2      SRR16036425_paired_2.fastq      -o      SRR16036425     -t 16   -m 200
+
+metaviralspades.py --only-assembler -1 BC59_S46_paired_1.fastq -2 BC59_S46_paired_2.fastq -o BC59_viral -t 16 -m 200
+metaviralspades.py --only-assembler -1 BC60_S47_paired_1.fastq -2 BC60_S47_paired_2.fastq -o BC60_viral -t 16 -m 200
+
 # 7Prodigal
 <pre lang="bash"> module load prodigal/2.6.3 </pre>
 <pre lang="bash"> prodigal -i /mnt/data/alfredvar/wgutierrez/5metaspades/BC59/contigs.fasta \
