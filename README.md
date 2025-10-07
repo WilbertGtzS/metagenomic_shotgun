@@ -46,6 +46,7 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 TruSeq3_Illumina.fa
 >PrefixPE/1
 TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+
 >PrefixPE/2
 GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 
