@@ -43,23 +43,23 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 
 # 2Trimmomatic
 
-TruSeq3_Illumina.fa
->PrefixPE/1
-TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+<pre lang="bash"> module load fastp/0.20.0 </pre>
+<pre lang="bash"> module load trimmomatic/0.39 </pre>
 
->PrefixPE/2
-GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
-
-trimmomatic PE ../1raw/"${base}"*_R1.fastq /1raw/"${base}"*_R2.fastq /1raw/"${base}"_R1.trimmed_PE.fastq /1raw/"${base}"_R1.trimmed_SE.fastq /1raw/"${base}"_R2.trimmed_PE.fastq /1raw/"${base}"_R2.trimmed_SE.fastq SLIDINGWINDOW:4:28 MINLEN:50
-
-trimmomatic PE -threads 2 \
+<pre lang="bash"> trimmomatic PE -threads 2 \
    ../2rcorrector/unfixrm_C1_S36_R1_001.cor.fq \
    ../2rcorrector/unfixrm_C1_S36_R2_001.cor.fq \
    trimmed_C1_R1.paired.fq.gz \
    trimmed_C1_R1.unpaired.fq.gz \
    trimmed_C1_R2.paired.fq.gz \
    trimmed_C1_R2.unpaired.fq.gz \
-   ILLUMINACLIP:TruSeq3_Illumina.fa:2:30:10 LEADING:30 TRAILING:30 SLIDINGWINDOW:4:25 MINLEN:50
+   ILLUMINACLIP:TruSeq3_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
+
+TruSeq3_Illumina.fa
+>PrefixPE/1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PrefixPE/2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 
 # 3Cutadapt
 
