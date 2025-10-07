@@ -57,4 +57,4 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 <pre lang="bash">source activate eggnog-mapper-2.1.13 </pre>
 <pre lang="bash"> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
 
-
+<pre lang="md"> ```tsv #query seed_ortholog evalue score eggNOG_OGs max_annot_lvl COG_category Description Preferred_name NODE_1_length_158342_cov_25.987794_1 1005048.CFU_1160 3.52e-21 103.0 COG0705@1|root,COG0705@2|Bacteria 28216|Betaproteobacteria S Rhomboid family protein Rhomboid ``` </pre>
