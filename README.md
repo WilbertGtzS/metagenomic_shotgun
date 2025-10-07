@@ -56,7 +56,7 @@ fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
 <pre lang="bash"> module load anaconda3/2025.06 </pre>
 <pre lang="bash">source activate eggnog-mapper-2.1.13 </pre>
 <pre lang="bash"> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
+| query                                 | seed_ortholog     | evalue   | score | eggNOG_OGs                                                                                   | max_annot_lvl            | COG_category | Description               | Preferred_name | GOs | EC | KEGG_ko | KEGG_Pathway | KEGG_Module | KEGG_Reaction | KEGG_rclass | BRITE | KEGG_TC | CAZy | BiGG_Reaction | PFAMs   |
+|--------------------------------------|-------------------|----------|-------|----------------------------------------------------------------------------------------------|---------------------------|---------------|---------------------------|----------------|-----|----|----------|---------------|--------------|----------------|--------------|--------|----------|------|----------------|---------|
+| NODE_1_length_158342_cov_25.987794_1 | 1005048.CFU_1160  | 3.52e-21 | 103.0 | COG0705@1\|root,COG0705@2\|Bacteria,1MYFP@1224\|Proteobacteria,2VPBJ@28216\|Betaproteobacteria | 28216\|Betaproteobacteria | S             | Rhomboid family protein   | Rhomboid       | -   | -  | -        | -             | -            | -              | -            | -      | -        | -    | -              | Rhomboid |
 
-| query                                | seed_ortholog     | evalue     | score | Description               | Preferred_name |
-|-------------------------------------|-------------------|------------|-------|---------------------------|----------------|
-| NODE_1_length_158342_cov_25.987794_1 | 1005048.CFU_1160  | 3.52e-21   | 103.0 | Rhomboid family protein   | Rhomboid       |
