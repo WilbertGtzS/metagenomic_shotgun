@@ -99,7 +99,7 @@ GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 
 # 6SPAdes
 
-<pre lang="bash"> module load spades/4.2.0
+<pre lang="bash"> module load spades/4.2.0 </pre>
 <pre lang="bash"> metaspades.py  --only-assembler        -1      SRR15909356_paired_1.fastq      -2      SRR15909356_paired_2.fastq      -o      SRR15909356     -t 16   -m 200 </pre>
 <pre lang="bash"> metaspades.py  --only-assembler        -1      SRR16036425_paired_1.fastq      -2      SRR16036425_paired_2.fastq      -o      SRR16036425     -t 16   -m 200 </pre>
 
