@@ -82,6 +82,12 @@ module load trf/4.09.1
 
 # 5Kraken2
 
+module load kraken/2.0.8-beta
+
+#kraken2 --db 1database_protzfungplant --threads 20 \
+  --paired /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R1cut.fastq /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R2cut.fastq \
+ --output BC60/tax/BC60.kraken \
+ --report BC60/tax/BC60.report
 
 # 6SPAdes
 
