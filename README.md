@@ -63,20 +63,20 @@ GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 
 # 3Cutadapt
 
-module load anaconda3/2025.06
-source activate cutadapt-5.1
+<pre lang="bash"> module load anaconda3/2025.06 </pre>
+<pre lang="bash"> source activate cutadapt-5.1 </pre>
 
-cutadapt -u 9 -o C1_R1_cut.fastq ../3trimmomatic/trimmed_C1_R1.paired.fq.gz
-cutadapt -u 9 -o C1_R2_cut.fastq ../3trimmomatic/trimmed_C1_R2.paired.fq.gz
+<pre lang="bash"> cutadapt -u 9 -o C1_R1_cut.fastq ../3trimmomatic/trimmed_C1_R1.paired.fq.gz </pre>
+<pre lang="bash"> cutadapt -u 9 -o C1_R2_cut.fastq ../3trimmomatic/trimmed_C1_R2.paired.fq.gz </pre> 
 
 # 4KneadData
-module load anaconda3/2025.06
-source activate kneaddata-0.12.3
-module load trimmomatic/0.33
-module load bowtie/2.5.4
-module load trf/4.09.1
+<pre lang="bash"> module load anaconda3/2025.06 </pre>
+<pre lang="bash"> source activate kneaddata-0.12.3 </pre>
+<pre lang="bash"> module load trimmomatic/0.33 </pre>
+<pre lang="bash"> module load bowtie/2.5.4 </pre>
+<pre lang="bash"> module load trf/4.09.1 </pre>
 
- kneaddata \
+<pre lang="bash"> kneaddata \
           -i1 "$R1" \
           -i2 "$R2" \
           -o "$SAMPLE_OUT" \
@@ -85,26 +85,26 @@ module load trf/4.09.1
           --output-prefix "$BASE" \
           --remove-intermediate-output \
           --log "$SAMPLE_OUT/${BASE}_kneaddata.log" \
-          --trf /mnt/data/alfredvar/wgutierrez/trf_link
+          --trf /mnt/data/alfredvar/wgutierrez/trf_link </pre>
 
 
 # 5Kraken2
 
-module load kraken/2.0.8-beta
+<pre lang="bash"> module load kraken/2.0.8-beta </pre>
 
-#kraken2 --db 1database_protzfungplant --threads 20 \
+<pre lang="bash"> kraken2 --db 1database_protzfungplant --threads 20 \
   --paired /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R1cut.fastq /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R2cut.fastq \
  --output BC60/tax/BC60.kraken \
- --report BC60/tax/BC60.report
+ --report BC60/tax/BC60.report </pre>
 
 # 6SPAdes
 
-module load spades/4.2.0
-metaspades.py  --only-assembler        -1      SRR15909356_paired_1.fastq      -2      SRR15909356_paired_2.fastq      -o      SRR15909356     -t 16   -m 200
-metaspades.py  --only-assembler        -1      SRR16036425_paired_1.fastq      -2      SRR16036425_paired_2.fastq      -o      SRR16036425     -t 16   -m 200
+<pre lang="bash"> module load spades/4.2.0
+<pre lang="bash"> metaspades.py  --only-assembler        -1      SRR15909356_paired_1.fastq      -2      SRR15909356_paired_2.fastq      -o      SRR15909356     -t 16   -m 200 </pre>
+<pre lang="bash"> metaspades.py  --only-assembler        -1      SRR16036425_paired_1.fastq      -2      SRR16036425_paired_2.fastq      -o      SRR16036425     -t 16   -m 200 </pre>
 
-metaviralspades.py --only-assembler -1 BC59_S46_paired_1.fastq -2 BC59_S46_paired_2.fastq -o BC59_viral -t 16 -m 200
-metaviralspades.py --only-assembler -1 BC60_S47_paired_1.fastq -2 BC60_S47_paired_2.fastq -o BC60_viral -t 16 -m 200
+<pre lang="bash"> metaviralspades.py --only-assembler -1 BC59_S46_paired_1.fastq -2 BC59_S46_paired_2.fastq -o BC59_viral -t 16 -m 200 </pre>
+<pre lang="bash"> metaviralspades.py --only-assembler -1 BC60_S47_paired_1.fastq -2 BC60_S47_paired_2.fastq -o BC60_viral -t 16 -m 200 </pre>
 
 # 7Prodigal
 <pre lang="bash"> module load prodigal/2.6.3 </pre>
