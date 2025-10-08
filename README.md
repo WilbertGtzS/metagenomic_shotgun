@@ -50,48 +50,48 @@ mkdir 8eggnog
 
 📁 Mollusk_microbiome  
 │  
-├── 📁 0raw  
+├─── 📁 0raw  
 │   ├── 📄 sample1.fastq  
 │   └── 📄 sample2.fastq  
 │  
-├── 📁 1fastqc  
+├─── 📁 1fastqc  
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 2trimmomatic  
+├─── 📁 2trimmomatic  
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 3cutadapt  
+├─── 📁 3cutadapt  
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 4kneaddata
+├─── 📁 4kneaddata
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 5kraken2
+├─── 📁 5kraken2
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 6spades
+├─── 📁 6spades
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 7prodigal
+├─── 📁 7prodigal
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 8eggnog-mapper
+├─── 📁 8eggnog-mapper
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │
-├── 📁 5kraken2
+├─── 📁 5kraken2
 │   ├── 📁 contigs  
 │       └── 📄 sample1_contigs.fasta    
 │  
 │  
-└── 📄 README.md
+└─── 📄 README.md
 
 # 0Raw_seq
 Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
