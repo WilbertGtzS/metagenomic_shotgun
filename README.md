@@ -24,7 +24,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`Cutadapt`]() `v0.00`
 - [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`
 
-  _Requiere_:  
+  _Require_:  
   - Trimmomatic `v0.33`  
   - Bowtie `v2.5.4`  
   - TRF `v4.09.1` 
