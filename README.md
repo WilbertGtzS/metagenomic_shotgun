@@ -58,7 +58,7 @@ AAAAAEEAEEEEEEE###EEE<EEEAE/EEEEEA<<EE/AE/EE<EEEEEAAEEEE/EAEEEEEEAEEEEEEEEE/AE<E
 Considerar that...
 
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
-<pre lang="bash"> fastqc -o .  ../0Raw_seq/*R1*.fastq ../0Raw_seq/*_R2*.fastq -t 4 </pre>
+<pre lang="bash"> fastqc ../0Raw_seq/*.fastq -o . -t 4 </pre>
 
 # 2Trimmomatic
 
