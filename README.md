@@ -223,10 +223,10 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │ ├── Dlaeve1_R1.fastq
 │ └── Dlaeve1_R2.fastq
 ├── 📁1fastqc/
-│ ├── file1_1.txt
-│ └── file1_2.txt
+│ ├── Dlaeve1_R1.fastq.html
+│ └── Dlaeve1_R2.fastq.html
 ├── 📁2trimmomatic/
-│ ├── file2_1.txt
+│ ├── Next_Illumina.fa
 │ ├── file2_2.txt
 │ └── file2_3.txt
 ├── 📁3cutadapt/ 
@@ -235,14 +235,14 @@ Finally, the annotation file is generated in this format, and from this file, ap
 ├── 📁4kneaddata/
 │ ├── file4_1.txt
 │ ├── file4_2.txt
-│ └── 📁sub4/
+│ └── 📁human_genome/
 ├── 📁5kraken2/
 │ ├── file5_1.txt
 │ ├── file5_2.txt
 │ ├── file5_3.txt
-│ └── 📁sub5/
+│ └── 📁kraken2_db/
 ├── 📁6spades/
-│ └── 📁sub6/
+│ └── 📁Dlaeve/
 │ └── file6_1.txt
 ├── 📁7prodigal/
 │ ├── file7_1.txt
