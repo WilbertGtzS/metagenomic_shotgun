@@ -33,11 +33,19 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`eggNOG`](http://eggnog-mapper.embl.de/) `v2.1.13`
 
 
+# 0Raw_seq
+
+Dlaeve_R1.fastq
+>NODE_1_length_158342_cov_25.987794_1
+ATGCGTATCGATCGTAGCTAGCTAGCTAGCTACGATCGATCGATCGATCGATCGATCGATCG
+GCTAGCTAGCATCGATCGATCGTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTAGCTA
+
+Dlaeve_R2.fastq
 
 # 1FastQC
 module load fastqc/0.11.3
 mkdir -p ../results/fastqc
-fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq
+
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
 <pre lang="bash"> fastqc -o ../results/fastqc -t 4 ../data/raw/*_R1*.fastq ../data/raw/*_R2*.fastq </pre>
 
@@ -93,18 +101,15 @@ GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
 <pre lang="bash"> module load kraken/2.0.8-beta </pre>
 
 <pre lang="bash"> kraken2 --db 1database_protzfungplant --threads 20 \
-  --paired /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R1cut.fastq /mnt/Timina/alfredvar/mfosado/microbioma/4cutadapt/60BCS47/BC60_R2cut.fastq \
- --output BC60/tax/BC60.kraken \
- --report BC60/tax/BC60.report </pre>
+  --paired Seq_R1_cut.fastq /Seq_R2_cut.fastq \
+ --output Seq/tax/Mollusk.kraken \
+ --report Seq/tax/Mollusk.report </pre>
 
 # 6SPAdes
 
 <pre lang="bash"> module load spades/4.2.0 </pre>
-<pre lang="bash"> metaspades.py  --only-assembler        -1      SRR15909356_paired_1.fastq      -2      SRR15909356_paired_2.fastq      -o      SRR15909356     -t 16   -m 200 </pre>
-<pre lang="bash"> metaspades.py  --only-assembler        -1      SRR16036425_paired_1.fastq      -2      SRR16036425_paired_2.fastq      -o      SRR16036425     -t 16   -m 200 </pre>
-
+<pre lang="bash"> metaspades.py --only-assembler -1 SRR15909356_paired_1.fastq -2 SRR15909356_paired_2.fastq -o SRR15909356 -t 16 -m 200 </pre>
 <pre lang="bash"> metaviralspades.py --only-assembler -1 BC59_S46_paired_1.fastq -2 BC59_S46_paired_2.fastq -o BC59_viral -t 16 -m 200 </pre>
-<pre lang="bash"> metaviralspades.py --only-assembler -1 BC60_S47_paired_1.fastq -2 BC60_S47_paired_2.fastq -o BC60_viral -t 16 -m 200 </pre>
 
 # 7Prodigal
 <pre lang="bash"> module load prodigal/2.6.3 </pre>
