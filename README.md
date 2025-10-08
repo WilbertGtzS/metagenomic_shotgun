@@ -87,7 +87,7 @@ CTGTCTCTTATACACATCT
 >PrefixPE/2
 CTGTCTCTTATACACATCT
 ```
-Once we have the .fa file with the adapter sequences we want to remove, we apply the following script with the desired arguments or conditions.
+Once we have the .fa file with the adapter sequences we want to remove, we apply the following script with the desired arguments or parameters.
 
 <pre lang="bash"> module load trimmomatic/0.39 </pre>
 <pre lang="bash"> trimmomatic PE -threads 4 \
@@ -100,12 +100,13 @@ Once we have the .fa file with the adapter sequences we want to remove, we apply
    ILLUMINACLIP:Next_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
 
 # 3Cutadapt
+After trimming with Trimmomatic, it is necessary to run FastQC again to check the quality of the output sequences from Trimmomatic. In this case, we are interested in the *.paired.fq.gz files. Therefore, after reviewing the HTML reports, we decide to remove the first 9 nucleotides at the beginning of each sequence. Once inside the 3cutadapt directory, we use the following script. Note that in this case, the Cutadapt tool is installed within an Anaconda environment, so:
 
 <pre lang="bash"> module load anaconda3/2025.06 </pre>
 <pre lang="bash"> source activate cutadapt-5.1 </pre>
 
-<pre lang="bash"> cutadapt -u 9 -o C1_R1_cut.fastq ../3trimmomatic/trimmed_C1_R1.paired.fq.gz </pre>
-<pre lang="bash"> cutadapt -u 9 -o C1_R2_cut.fastq ../3trimmomatic/trimmed_C1_R2.paired.fq.gz </pre> 
+<pre lang="bash"> cutadapt -u 9 -o Dlaeve_R1_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R1.paired.fq.gz </pre>
+<pre lang="bash"> cutadapt -u 9 -o Dlaeve_R2_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R2.paired.fq.gz </pre> 
 
 # 4KneadData
 <pre lang="bash"> module load anaconda3/2025.06 </pre>
