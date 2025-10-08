@@ -48,42 +48,22 @@ mkdir 8eggnog
 </pre>
 
 
-📁 Proyecto-Metagenoma  
+📁 Mollusk_Microbiome  
 │  
-├── 📁 data  
+├── 📁 0raw  
 │   ├── 📄 sample1.fastq  
 │   └── 📄 sample2.fastq  
 │  
-├── 📁 scripts  
+├── 📁 1fastqc  
 │   ├── 📄 run_metaspades.sh  
 │   └── 📄 run_prodigal.sh  
 │  
-├── 📁 results  
+├── 📁 3trimmomatic  
 │   ├── 📁 contigs  
-│   │   └── 📄 sample1_contigs.fasta  
-│   │  
-│   └── 📁 annotations  
-│       └── 📄 sample1_proteins.faa  
+│       └── 📄 sample1_contigs.fasta    
+│  
 │  
 └── 📄 README.md
-
-
-Proyecto-Metagenoma/
-├── data/
-│   ├── sample1.fastq
-│   └── sample2.fastq
-│
-├── scripts/
-│   ├── run_metaspades.sh
-│   └── run_prodigal.sh
-│
-├── results/
-│   ├── contigs/
-│   │   └── sample1_contigs.fasta
-│   └── annotations/
-│       └── sample1_proteins.faa
-│
-└── README.md
 
 
 
