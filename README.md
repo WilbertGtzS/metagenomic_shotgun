@@ -33,7 +33,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`Prodigal`](https://github.com/hyattpd/Prodigal) `v2.6.3`
 - [`eggNOG`](http://eggnog-mapper.embl.de/) `v2.1.13`
 
-Este flujo de trabajo está diseñado para realizar los análisis por carpetas separadas. Por lo tanto, creamos una carpeta para cada paso y cada script está indicado para realizarse dentro de cada directorio. Además, este análisis ha sido desarrollado dentro de un cluster institucional por lo cual el llamadado de cada herramienta se realiza mediante "module load".  
+This workflow is designed to perform the analyses in separate folders. Therefore, we create a folder for each step, and each script is intended to be executed within its corresponding directory. Additionally, this analysis was developed within an institutional cluster, so each tool is called using "module load". 
 
 <pre lang="bash">
 mkdir 0raw
@@ -48,7 +48,7 @@ mkdir 8eggnog
 </pre>
 
 # 0Raw_seq
-Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here:: https://www.drive5.com/usearch/manual/quality_score.html
+Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
 
 Dlaeve1_R1.fastq
 
@@ -67,17 +67,28 @@ TCTCAACGTCGTTGANNNGGACGTCAAGCTCCTGCTGCAGCACTCTCTGGAAATCTGACTTGAAGTTGGTGTAGAACTGC
 +
 AAAAAEEAEEEEEEE###EEE<EEEAE/EEEEEA<<EE/AE/EE<EEEEEAAEEEE/EAEEEEEEAEEEEEEEEE/AE<EEEEEEEEEEEEAEEEEA<E/AA/<EEAEEE/AAA//EEEE/EE<EEE/EEEEE/EEEEEEEEEAAEAEA
 ```
+
 # 1FastQC
-This workflow is designed to perform the analyses in separate folders. Therefore, we create a folder for each step, and each script is intended to be executed within its corresponding directory. Additionally, this analysis was developed within an institutional cluster, so each tool is called using "module load".
+Once the raw sequence files are stored in the 0raw directory, the first quality check of the sequences is performed. Therefore, we enter the 1fastqc directory and use the following script.
 
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
 <pre lang="bash"> fastqc ../0Raw_seq/Dlaeve1_R1.fastq -o . -t 4
  fastqc ../0Raw_seq/Dlaeve1_R2.fastq -o . -t 4 </pre>
 
+The result will be an HTML file to visualize the quality graphs.
+
 # 2Trimmomatic
+El siguiente paso es el primer filtro de calidad con trimmomatic de acuerdo a lo observado en el primer resultado de fastqc y también a los criterios necesario de filtrado. Por lo tanto, dentro de la carpeta 2trimmomatic vamos a correr el siguiente script. Es importante considerar que dentro del directorio 2trimmomatic también debemos tener el archivo TruSeq3_Illumina.fa que contiene las secuencias de adaptadores de Illumina, dependiendo el caso. Aquí hay un ejemplo de barcodes universales. 
+
+TruSeq3_Illumina.fa
+```
+>PrefixPE/1
+TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+>PrefixPE/2
+GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+```
 
 <pre lang="bash"> module load trimmomatic/0.39 </pre>
-
 <pre lang="bash"> trimmomatic PE -threads 4 \
    ../0Raw_seq/Dlaeve1_R1.fastq \
    ../0Raw_seq/Dlaeve1_R2.fastq \
@@ -87,11 +98,7 @@ This workflow is designed to perform the analyses in separate folders. Therefore
    trimmed_Dlaeve1_R2.unpaired.fq.gz \
    ILLUMINACLIP:TruSeq3_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
 
-TruSeq3_Illumina.fa
->PrefixPE/1
-TACACTCTTTCCCTACACGACGCTCTTCCGATCT
->PrefixPE/2
-GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+
 
 # 3Cutadapt
 
