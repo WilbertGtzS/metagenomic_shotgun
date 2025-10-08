@@ -218,35 +218,37 @@ Finally, the annotation file is generated in this format, and from this file, ap
 
 # Summary final files
 ```
-📦root/
-├── 📁0/
-│ ├── file0_1.txt
-│ └── file0_2.txt
-├── 📁1/
+📁mollusk_microbiome/
+├── 📁0raw/
+│ ├── Dlaeve1_R1.fastq
+│ └── Dlaeve1_R2.fastq
+├── 📁1fastqc/
 │ ├── file1_1.txt
 │ └── file1_2.txt
-├── 📁2/
+├── 📁2trimmomatic/
 │ ├── file2_1.txt
 │ ├── file2_2.txt
 │ └── file2_3.txt
-├── 📁3/ # Vacío
-├── 📁4/
+├── 📁3cutadapt/ 
+│ ├── file2_2.txt
+│ └── file2_3.txt
+├── 📁4kneaddata/
 │ ├── file4_1.txt
 │ ├── file4_2.txt
 │ └── 📁sub4/
-├── 📁5/
+├── 📁5kraken2/
 │ ├── file5_1.txt
 │ ├── file5_2.txt
 │ ├── file5_3.txt
 │ └── 📁sub5/
-├── 📁6/
+├── 📁6spades/
 │ └── 📁sub6/
 │ └── file6_1.txt
-├── 📁7/
+├── 📁7prodigal/
 │ ├── file7_1.txt
 │ └── file7_2.txt
-├── 📁8/ # Vacío
-└── 📁9/
+├── 📁8eggnog/ # Vacío
+└── 📁/
 ├── file9_1.txt
 └── file9_2.txt
 ```
