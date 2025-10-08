@@ -39,6 +39,12 @@ Este flujo de trabajo está diseñado para realizar los análisis por carpetas s
 mkdir 0raw
 mkdir 1fastqc
 mkdir 2trimmomatic
+mkdir 3cutadapt
+mkdir 4kneaddata
+mkdir 5kraken2
+mkdir 6spades
+mkdir 7prodigal
+mkdir 8eggnog  
 </pre>
 
 # 0Raw_seq
