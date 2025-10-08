@@ -159,16 +159,28 @@ kraken2-build --build --threads 32 --db kraken2_db
 
 Once the database has been created, we use the following script to perform taxonomic assignment with Kraken2.
 
-<pre lang="bash"> 
+<pre lang="bash">
 kraken2 --db kraken2_db --threads 32 \
 --paired ../4kneaddata/Dlaeve1/*_R1.fastq ../4kneaddata/Dlaeve1/*_R2.fastq \
 --output Dlaeve1.kraken \
 --report Dlaeve1.report 
 </pre>
 
-Los archivos de salida *.kraken 
+The output file with the .report extension contains the taxonomic classification. This file is then used in RStudio or Pavian metagenomic data analysis. Tambien se puede convertir el archivo *.report a un archivo de formato *.biom
+
+<pre lang="bash">
+kraken-biom/1.0.1
+</pre>
+
+<pre lang="bash">
+kraken-biom \
+  --report-files Dlaeve1.report \
+  --output Dlaeve1.biom
+</pre>
+
 
 # 6SPAdes
+En la siguiente etapa, se utilizaron las secuencias obtenidas por kneaddata y para el 
 
 <pre lang="bash"> module load spades/4.2.0 </pre>
 <pre lang="bash"> metaspades.py --only-assembler -1 SRR15909356_paired_1.fastq -2 SRR15909356_paired_2.fastq -o SRR15909356 -t 16 -m 200 </pre>
