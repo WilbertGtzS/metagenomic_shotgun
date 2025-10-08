@@ -203,7 +203,7 @@ kraken2 --db kraken2_db --threads 32 \
 --report Dlaeve1.report 
 </pre>
 
-The output file with the .report extension contains the taxonomic classification. This file is then used in RStudio or Pavian metagenomic data analysis. Tambien se puede convertir el archivo *.report a un archivo de formato *.biom
+The output file with the .report extension contains the taxonomic classification. This file is then used in RStudio or Pavian metagenomic data analysis. The *.report file can also be converted into a *.biom format file.
 
 <pre lang="bash">
 kraken-biom/1.0.1
