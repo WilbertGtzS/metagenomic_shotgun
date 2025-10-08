@@ -48,50 +48,41 @@ mkdir 8eggnog
 </pre>
 
 
-📁 Mollusk_microbiome  
+📁 Proyecto-Metagenoma  
 │  
-├─── 📁 0raw  
-│   ├── 📄 sample1.fastq  
-│   └── 📄 sample2.fastq  
+├── 📁 carpeta1  
+│   ├── 📄 archivo1_1.txt  
+│   └── 📄 archivo1_2.txt  
 │  
-├─── 📁 1fastqc  
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 2trimmomatic  
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 3cutadapt  
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 4kneaddata
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 5kraken2
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 6spades
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 7prodigal
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 8eggnog-mapper
-│   ├── 📄 run_metaspades.sh  
-│   └── 📄 run_prodigal.sh  
-│
-├─── 📁 5kraken2
-│   ├── 📁 contigs  
-│       └── 📄 sample1_contigs.fasta    
+├── 📁 carpeta2  
+│   ├── 📄 archivo2_1.txt  
+│   └── 📄 archivo2_2.txt  
 │  
+├── 📁 carpeta3  
+│   ├── 📄 archivo3_1.txt  
+│   └── 📄 archivo3_2.txt  
 │  
-└─── 📄 README.md
+├── 📁 carpeta4  
+│   ├── 📄 archivo4_1.txt  
+│   └── 📄 archivo4_2.txt  
+│  
+├── 📁 carpeta5  
+│   ├── 📄 archivo5_1.txt  
+│   └── 📄 archivo5_2.txt  
+│  
+├── 📁 carpeta6  
+│   ├── 📄 archivo6_1.txt  
+│   └── 📄 archivo6_2.txt  
+│  
+├── 📁 carpeta7  
+│   ├── 📄 archivo7_1.txt  
+│   └── 📄 archivo7_2.txt  
+│  
+├── 📁 carpeta8  
+│   ├── 📄 archivo8_1.txt  
+│   └── 📄 archivo8_2.txt  
+│  
+└── 📄 README.md
 
 # 0Raw_seq
 Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
