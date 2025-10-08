@@ -33,7 +33,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`Prodigal`](https://github.com/hyattpd/Prodigal) `v2.6.3`
 - [`eggNOG`](http://eggnog-mapper.embl.de/) `v2.1.13`
 
-Este flujo de trabajo está diseñado para realizar los análisis por carpetas separadas. Por lo tanto, tendremos una carpeta para cada paso y cada script está indicado para realizarse dentro de cada directorio. Además, este análisis ha sido desarrollado dentro de un cluster institucional por lo cual el llamadado de cada herramienta se realiza mediante "module load".  
+Este flujo de trabajo está diseñado para realizar los análisis por carpetas separadas. Por lo tanto, creamos una carpeta para cada paso y cada script está indicado para realizarse dentro de cada directorio. Además, este análisis ha sido desarrollado dentro de un cluster institucional por lo cual el llamadado de cada herramienta se realiza mediante "module load".  
 
 <pre lang="bash">
 mkdir 0raw
@@ -48,7 +48,7 @@ mkdir 8eggnog
 </pre>
 
 # 0Raw_seq
-Suppose you have Illumina paired-end sequencing reads. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here:: https://www.drive5.com/usearch/manual/quality_score.html
+Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here:: https://www.drive5.com/usearch/manual/quality_score.html
 
 Dlaeve1_R1.fastq
 
@@ -68,7 +68,7 @@ TCTCAACGTCGTTGANNNGGACGTCAAGCTCCTGCTGCAGCACTCTCTGGAAATCTGACTTGAAGTTGGTGTAGAACTGC
 AAAAAEEAEEEEEEE###EEE<EEEAE/EEEEEA<<EE/AE/EE<EEEEEAAEEEE/EAEEEEEEAEEEEEEEEE/AE<EEEEEEEEEEEEAEEEEA<E/AA/<EEAEEE/AAA//EEEE/EE<EEE/EEEEE/EEEEEEEEEAAEAEA
 ```
 # 1FastQC
-Considerar that...
+This workflow is designed to perform the analyses in separate folders. Therefore, we create a folder for each step, and each script is intended to be executed within its corresponding directory. Additionally, this analysis was developed within an institutional cluster, so each tool is called using "module load".
 
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
 <pre lang="bash"> fastqc ../0Raw_seq/Dlaeve1_R1.fastq -o . -t 4
