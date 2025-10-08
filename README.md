@@ -216,7 +216,7 @@ Finally, the annotation file is generated in this format, and from this file, ap
 | NODE_1_length_158342_cov_25.987794_1 | 1005048.CFU_1160  | 3.52e-21 | 103.0 | COG0705@1\|root,COG0705@2\|Bacteria,1MYFP@1224\|Proteobacteria,2VPBJ@28216\|Betaproteobacteria | 28216\|Betaproteobacteria | S             | Rhomboid family protein   | Rhomboid       | -   | -  | -        | -             | -            | -              | -            | -      | -        | -    | -              | Rhomboid |
 
 
-# Summary files
+# Summary final files
 📁 Mollusk_microbiome
 │  
 ├── 📁 0raw
@@ -228,7 +228,8 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │   └── 📄 archivo2_2.txt  
 │  
 ├── 📁 2trimmomatic
-│   ├── 📄 archivo3_1.txt  
+│   ├── 📄 Next_Illumina.fa
+│   ├── 📄 archivo3_1.txt
 │   └── 📄 archivo3_2.txt  
 │  
 ├── 📁 3cutadapt
@@ -236,10 +237,12 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │   └── 📄 archivo4_2.txt  
 │  
 ├── 📁 4kneaddata 
-│   ├── 📄 archivo5_1.txt  
+│   ├── 📁 human_genome
+│   ├── 📄 archivo5_1.txt
 │   └── 📄 archivo5_2.txt  
 │  
 ├── 📁 5kraken2
+│   ├── 📁 kraken2_db
 │   ├── 📄 archivo6_1.txt  
 │   └── 📄 archivo6_2.txt  
 │  
@@ -252,6 +255,7 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │   └── 📄 archivo8_2.txt  
 │  
 ├── 📁 8eggnog  
+│   ├── 📁 eggnog_db
 │   ├── 📄 archivo8_1.txt  
 │   └── 📄 archivo8_2.txt  
 │  
