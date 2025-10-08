@@ -48,19 +48,43 @@ mkdir 8eggnog
 </pre>
 
 
-📁 Mollusk_microbiome/
-├── 📁 0raw/
-│   ├── 📄 sample1.fastq
-│   └── 📄 sample2.fastq
-├── 📁 1fastqc/
-│   ├── 📄 run_metaspades.sh
-│   └── 📄 run_prodigal.sh
-├── 📁 2trimmomatic/
-│   ├── 📁 contigs/
-│   │   └── 📄 sample1_contigs.fasta
-│   └── 📁 annotations/
-│       └── 📄 sample1_proteins.faa
+📁 Proyecto-Metagenoma  
+│  
+├── 📁 data  
+│   ├── 📄 sample1.fastq  
+│   └── 📄 sample2.fastq  
+│  
+├── 📁 scripts  
+│   ├── 📄 run_metaspades.sh  
+│   └── 📄 run_prodigal.sh  
+│  
+├── 📁 results  
+│   ├── 📁 contigs  
+│   │   └── 📄 sample1_contigs.fasta  
+│   │  
+│   └── 📁 annotations  
+│       └── 📄 sample1_proteins.faa  
+│  
 └── 📄 README.md
+
+
+Proyecto-Metagenoma/
+├── data/
+│   ├── sample1.fastq
+│   └── sample2.fastq
+│
+├── scripts/
+│   ├── run_metaspades.sh
+│   └── run_prodigal.sh
+│
+├── results/
+│   ├── contigs/
+│   │   └── sample1_contigs.fasta
+│   └── annotations/
+│       └── sample1_proteins.faa
+│
+└── README.md
+
 
 
 # 0Raw_seq
