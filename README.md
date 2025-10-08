@@ -145,7 +145,7 @@ Once the database has been downloaded, we use the following script to run the se
 In this step, the tool generates a separate directory for each paired-end sample. Inside each directory, we will find the filtered sequences: *_paired_R1.fastq and *_paired_R2.fastq.
 
 # 5Kraken2
-En la siguiente etapa utilizamos Kraken2 para la asignacion taxonomica. Primero es necesario tener descargada la base de datos de Kraken2 y configurar para poder utilizarla. En nuestro caso se realizó con el siguiente script, mediante la descarga de la base de datos estandar y libreririas adicionales. Asi como la construcción de la libreria que sea util para la asignación taxonomica.
+In the next step, we use Kraken2 for taxonomic assignment. First, it is necessary to download the Kraken2 database and configure it for use. In our case, this was done using the following script, which downloads the standard database along with additional libraries, and builds a custom library suitable for taxonomic classification.
 
 <pre lang="bash"> module load kraken/2.0.8-beta </pre>
 
@@ -157,17 +157,16 @@ kraken2-build --download-library protozoa --threads 32 --db kraken2_db
 kraken2-build --build --threads 32 --db kraken2_db
 </pre>
 
-Una vez creada la base de datos, utilizamos el siguiente script para la asignacion taxonomica.
+Once the database has been created, we use the following script to perform taxonomic assignment with Kraken2.
 
 <pre lang="bash"> 
 kraken2 --db kraken2_db --threads 32 \
---paired ../Dlaeve1/_R1.fastq ../Dlaeve1/Dlaeve_R2_cut.fastq \
---output Seq/tax/Mollusk.kraken \
---report Seq/tax/Mollusk.report </pre>
+--paired ../4kneaddata/Dlaeve1/*_R1.fastq ../4kneaddata/Dlaeve1/*_R2.fastq \
+--output Dlaeve1.kraken \
+--report Dlaeve1.report 
+</pre>
 
-kraken2 --db kraken2_db --threads 16 \
-  --paired ../4cutadapt/C1_R1_cut.fastq ../4cutadapt/C1_R2_cut.fastq \
-  --unclassified-out C1_unclassf_R#.fq.gz
+Los archivos de salida *.kraken 
 
 # 6SPAdes
 
