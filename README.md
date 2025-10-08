@@ -1,7 +1,7 @@
 # Metagenomic Shotgun Pipeline
 ![metagenomics_wallp](https://github.com/user-attachments/assets/e5932edc-178d-4655-a24d-49a003e845b0)
 
-This pipeline was constructed for de novo assembly of transcriptome research for a non-model organism.
+This pipeline was constructed for a shotgun metagenome analysis from mollusks.
 
 This was equally contributor by:
 
