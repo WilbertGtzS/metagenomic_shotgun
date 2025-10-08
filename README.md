@@ -47,6 +47,22 @@ mkdir 7prodigal
 mkdir 8eggnog  
 </pre>
 
+
+📁 Mollusk_microbiome/
+├── 📁 0raw/
+│   ├── 📄 sample1.fastq
+│   └── 📄 sample2.fastq
+├── 📁 1fastqc/
+│   ├── 📄 run_metaspades.sh
+│   └── 📄 run_prodigal.sh
+├── 📁 2trimmomatic/
+│   ├── 📁 contigs/
+│   │   └── 📄 sample1_contigs.fasta
+│   └── 📁 annotations/
+│       └── 📄 sample1_proteins.faa
+└── 📄 README.md
+
+
 # 0Raw_seq
 Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
 
