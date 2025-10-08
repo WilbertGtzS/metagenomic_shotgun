@@ -217,46 +217,36 @@ Finally, the annotation file is generated in this format, and from this file, ap
 
 
 # Summary final files
-📁 Mollusk_microbiome
-│  
-├── 📁 0raw
-│   ├── 📄 archivo1_1.txt  
-│   └── 📄 archivo1_2.txt  
-│  
-├── 📁 1fastqc
-│   ├── 📄 archivo2_1.txt  
-│   └── 📄 archivo2_2.txt  
-│  
-├── 📁 2trimmomatic
-│   ├── 📄 Next_Illumina.fa
-│   ├── 📄 archivo3_1.txt
-│   └── 📄 archivo3_2.txt  
-│  
-├── 📁 3cutadapt
-│   ├── 📄 archivo4_1.txt  
-│   └── 📄 archivo4_2.txt  
-│  
-├── 📁 4kneaddata 
-│   ├── 📁 human_genome
-│   ├── 📄 archivo5_1.txt
-│   └── 📄 archivo5_2.txt  
-│  
-├── 📁 5kraken2
-│   ├── 📁 kraken2_db
-│   ├── 📄 archivo6_1.txt  
-│   └── 📄 archivo6_2.txt  
-│  
-├── 📁 6spades
-│   ├── 📄 archivo7_1.txt  
-│   └── 📄 archivo7_2.txt  
-│  
-├── 📁 7prodigal  
-│   ├── 📄 archivo8_1.txt  
-│   └── 📄 archivo8_2.txt  
-│  
-├── 📁 8eggnog  
-│   ├── 📁 eggnog_db
-│   ├── 📄 archivo8_1.txt  
-│   └── 📄 archivo8_2.txt  
-│  
-└── 📄 README.md
+```
+📦root/
+├── 📁0/
+│ ├── file0_1.txt
+│ └── file0_2.txt
+├── 📁1/
+│ ├── file1_1.txt
+│ └── file1_2.txt
+├── 📁2/
+│ ├── file2_1.txt
+│ ├── file2_2.txt
+│ └── file2_3.txt
+├── 📁3/ # Vacío
+├── 📁4/
+│ ├── file4_1.txt
+│ ├── file4_2.txt
+│ └── 📁sub4/
+├── 📁5/
+│ ├── file5_1.txt
+│ ├── file5_2.txt
+│ ├── file5_3.txt
+│ └── 📁sub5/
+├── 📁6/
+│ └── 📁sub6/
+│ └── file6_1.txt
+├── 📁7/
+│ ├── file7_1.txt
+│ └── file7_2.txt
+├── 📁8/ # Vacío
+└── 📁9/
+├── file9_1.txt
+└── file9_2.txt
+```
