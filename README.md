@@ -15,7 +15,7 @@ This was equally contributor by:
 
 This workflow was completed in DNA computing cluster from Laboratorio Nacional de Visualización Científica Avanzada (LAVIS) https://lavis.unam.mx/ at Universidad Nacional Autónoma de México (UNAM), Juriquilla, Querétaro, México. 🇲🇽
 
-This is an example of workflow considering the next number of samples of an experimental metagenome
+This is an example of workflow considering one sample of a metagenome study.
 
 # Bioinformatic tools
 Below, there are the bioinformatic tools and it's respective used version:
