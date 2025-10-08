@@ -47,43 +47,6 @@ mkdir 7prodigal
 mkdir 8eggnog  
 </pre>
 
-
-📁 Proyecto-Metagenoma  
-│  
-├── 📁 carpeta1  
-│   ├── 📄 archivo1_1.txt  
-│   └── 📄 archivo1_2.txt  
-│  
-├── 📁 carpeta2  
-│   ├── 📄 archivo2_1.txt  
-│   └── 📄 archivo2_2.txt  
-│  
-├── 📁 carpeta3  
-│   ├── 📄 archivo3_1.txt  
-│   └── 📄 archivo3_2.txt  
-│  
-├── 📁 carpeta4  
-│   ├── 📄 archivo4_1.txt  
-│   └── 📄 archivo4_2.txt  
-│  
-├── 📁 carpeta5  
-│   ├── 📄 archivo5_1.txt  
-│   └── 📄 archivo5_2.txt  
-│  
-├── 📁 carpeta6  
-│   ├── 📄 archivo6_1.txt  
-│   └── 📄 archivo6_2.txt  
-│  
-├── 📁 carpeta7  
-│   ├── 📄 archivo7_1.txt  
-│   └── 📄 archivo7_2.txt  
-│  
-├── 📁 carpeta8  
-│   ├── 📄 archivo8_1.txt  
-│   └── 📄 archivo8_2.txt  
-│  
-└── 📄 README.md
-
 # 0Raw_seq
 Suppose you have Illumina paired-end sequencing reads saved in 0raw directory. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
 
@@ -251,3 +214,45 @@ Finally, the annotation file is generated in this format, and from this file, ap
 | query                                 | seed_ortholog     | evalue   | score | eggNOG_OGs                                                                                   | max_annot_lvl            | COG_category | Description               | Preferred_name | GOs | EC | KEGG_ko | KEGG_Pathway | KEGG_Module | KEGG_Reaction | KEGG_rclass | BRITE | KEGG_TC | CAZy | BiGG_Reaction | PFAMs   |
 |--------------------------------------|-------------------|----------|-------|----------------------------------------------------------------------------------------------|---------------------------|---------------|---------------------------|----------------|-----|----|----------|---------------|--------------|----------------|--------------|--------|----------|------|----------------|---------|
 | NODE_1_length_158342_cov_25.987794_1 | 1005048.CFU_1160  | 3.52e-21 | 103.0 | COG0705@1\|root,COG0705@2\|Bacteria,1MYFP@1224\|Proteobacteria,2VPBJ@28216\|Betaproteobacteria | 28216\|Betaproteobacteria | S             | Rhomboid family protein   | Rhomboid       | -   | -  | -        | -             | -            | -              | -            | -      | -        | -    | -              | Rhomboid |
+
+
+# Summary files
+📁 Mollusk_microbiome
+│  
+├── 📁 0raw
+│   ├── 📄 archivo1_1.txt  
+│   └── 📄 archivo1_2.txt  
+│  
+├── 📁 1fastqc
+│   ├── 📄 archivo2_1.txt  
+│   └── 📄 archivo2_2.txt  
+│  
+├── 📁 2trimmomatic
+│   ├── 📄 archivo3_1.txt  
+│   └── 📄 archivo3_2.txt  
+│  
+├── 📁 3cutadapt
+│   ├── 📄 archivo4_1.txt  
+│   └── 📄 archivo4_2.txt  
+│  
+├── 📁 4kneaddata 
+│   ├── 📄 archivo5_1.txt  
+│   └── 📄 archivo5_2.txt  
+│  
+├── 📁 5kraken2
+│   ├── 📄 archivo6_1.txt  
+│   └── 📄 archivo6_2.txt  
+│  
+├── 📁 6spades
+│   ├── 📄 archivo7_1.txt  
+│   └── 📄 archivo7_2.txt  
+│  
+├── 📁 7prodigal  
+│   ├── 📄 archivo8_1.txt  
+│   └── 📄 archivo8_2.txt  
+│  
+├── 📁 8eggnog  
+│   ├── 📄 archivo8_1.txt  
+│   └── 📄 archivo8_2.txt  
+│  
+└── 📄 README.md
