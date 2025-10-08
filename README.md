@@ -102,37 +102,49 @@ Once we have the .fa file with the adapter sequences we want to remove, we apply
 # 3Cutadapt
 After trimming with Trimmomatic, it is necessary to run FastQC again to check the quality of the output sequences from Trimmomatic. In this case, we are interested in the *.paired.fq.gz files. Therefore, after reviewing the HTML reports, we decide to remove the first 9 nucleotides at the beginning of each sequence. Once inside the 3cutadapt directory, we use the following script. Note that in this case, the Cutadapt tool is installed within an Anaconda environment, so:
 
-<pre lang="bash"> module load anaconda3/2025.06
-source activate cutadapt-5.1 </pre>
+<pre lang="bash"> 
+module load anaconda3/2025.06
+source activate cutadapt-5.1 
+</pre>
 
-<pre lang="bash"> cutadapt -u 9 -o Dlaeve_R1_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R1.paired.fq.gz 
-cutadapt -u 9 -o Dlaeve_R2_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R2.paired.fq.gz </pre> 
+<pre lang="bash"> 
+cutadapt -u 9 -o Dlaeve_R1_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R1.paired.fq.gz 
+cutadapt -u 9 -o Dlaeve_R2_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R2.paired.fq.gz 
+</pre> 
 
 # 4KneadData
-<pre lang="bash"> module load anaconda3/2025.06
+El siguiente paso es eliminar secuencias contaminantes de humanos mediante el uso de la herramienta KneadData. Primero es necesario descargar la base de datos del genoma humano meddiante el siguiente script dentro del directorio 4kneaddata.
+
+<pre lang="bash"> 
+module load anaconda3/2025.06
 source activate kneaddata-0.12.3
 module load trimmomatic/0.33
 module load bowtie/2.5.4
-module load trf/4.09.1 </pre>
+module load trf/4.09.1 
+</pre>
+
+<pre lang="bash"> 
+kneaddata_database --download human_genome bowtie2 ./human_genome
+</pre>
+
+Una vez descargada la base de datos utilizamos el siguiente script para utilizar la herramienta 
 
 <pre lang="bash"> kneaddata \
   -i1 ../3cutadapt/Dlaeve_R1_cut.fastq \
   -i2 ../3cutadapt/Dlaeve_R2_cut.fastq \
-  -o ./Dlaeve_output \
-  -db /ruta/a/la/base/de/datos/kneaddata_db \
+  -o ./Dlaeve1_output \
+  -db ./human_genome \
   -t 4 \
-  --output-prefix Dlaeve \
+  --output-prefix Dlaeve1 \
   --remove-intermediate-output \
-  --log ./4kneaddata/Dlaeve_output/Dlaeve_kneaddata.log \
-  --trf /mnt/data/alfredvar/wgutierrez/trf_link </pre>
-
-
+  --log ./Dlaeve1_output/Dlaeve_kneaddata.log \
+  --trf /ruta/a/binary/trf/trf_link </pre>
 
 # 5Kraken2
 
 <pre lang="bash"> module load kraken/2.0.8-beta </pre>
 
-<pre lang="bash"> kraken2 --db 1database_protzfungplant --threads 20 \
+<pre lang="bash"> kraken2 --db database_protzfungplant --threads 20 \
   --paired Seq_R1_cut.fastq /Seq_R2_cut.fastq \
  --output Seq/tax/Mollusk.kraken \
  --report Seq/tax/Mollusk.report </pre>
