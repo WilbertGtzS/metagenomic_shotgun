@@ -178,13 +178,14 @@ kraken-biom \
   --output Dlaeve1.biom
 </pre>
 
+Now, the .biom file containing the taxonomic assignment information is useful for statistical analysis of microbiome composition in RStudio.
 
 # 6SPAdes
-En la siguiente etapa, se utilizaron las secuencias obtenidas por kneaddata y para el 
+En la siguiente etapa, se utilizaron las secuencias obtenidas por kneaddata para el ensamble de metagenomas a partir de las secuencias cortas. Este procedimiento se realizó con metaSPAdes mediante el uso del siguiente script. 
 
 <pre lang="bash"> module load spades/4.2.0 </pre>
-<pre lang="bash"> metaspades.py --only-assembler -1 SRR15909356_paired_1.fastq -2 SRR15909356_paired_2.fastq -o SRR15909356 -t 16 -m 200 </pre>
-<pre lang="bash"> metaviralspades.py --only-assembler -1 BC59_S46_paired_1.fastq -2 BC59_S46_paired_2.fastq -o BC59_viral -t 16 -m 200 </pre>
+<pre lang="bash"> metaspades.py --only-assembler -1 ../4kneaddata/Dlaeve1/*_R1.fastq -2 ../4kneaddata/Dlaeve1/*_R2.fastq -o Dlaeve1 -t 16 -m 200 </pre>
+<pre lang="bash"> metaviralspades.py --only-assembler -1 ../4kneaddata/Dlaeve1/*_R1.fastq -2 ../4kneaddata/Dlaeve1/*_R2.fastq -o Dlaeve1 -t 16 -m 200 </pre>
 
 # 7Prodigal
 <pre lang="bash"> module load prodigal/2.6.3 </pre>
