@@ -80,12 +80,12 @@ The result will be an HTML file to visualize the quality graphs.
 # 2Trimmomatic
 El siguiente paso es el primer filtro de calidad con trimmomatic de acuerdo a lo observado en el primer resultado de fastqc y también a los criterios necesario de filtrado. Por lo tanto, dentro de la carpeta 2trimmomatic vamos a correr el siguiente script. Es importante considerar que dentro del directorio 2trimmomatic también debemos tener el archivo TruSeq3_Illumina.fa que contiene las secuencias de adaptadores de Illumina, dependiendo el caso. Aquí hay un ejemplo de barcodes universales. 
 
-TruSeq3_Illumina.fa
+Next_Illumina.fa
 ```
 >PrefixPE/1
-TACACTCTTTCCCTACACGACGCTCTTCCGATCT
+CTGTCTCTTATACACATCT
 >PrefixPE/2
-GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
+CTGTCTCTTATACACATCT
 ```
 
 <pre lang="bash"> module load trimmomatic/0.39 </pre>
@@ -96,7 +96,7 @@ GTGACTGGAGTTCAGACGTGTGCTCTTCCGATCT
    trimmed_Dlaeve1_R1.unpaired.fq.gz \
    trimmed_Dlaeve1_R2.paired.fq.gz \
    trimmed_Dlaeve1_R2.unpaired.fq.gz \
-   ILLUMINACLIP:TruSeq3_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
+   ILLUMINACLIP:Next_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
 
 
 
