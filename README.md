@@ -112,8 +112,10 @@ cutadapt -u 9 -o Dlaeve_R1_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R1.paired.fq
 cutadapt -u 9 -o Dlaeve_R2_cut.fastq ../2trimmomatic/trimmed_Dlaeve_R2.paired.fq.gz 
 </pre> 
 
+In this case, the output files are the *_cut.fastq files, which will be used in the next step.
+
 # 4KneadData
-El siguiente paso es eliminar secuencias contaminantes de humanos mediante el uso de la herramienta KneadData. Primero es necesario descargar la base de datos del genoma humano meddiante el siguiente script dentro del directorio 4kneaddata.
+The next step is to remove contaminant human sequences using the KneadData tool. First, it is necessary to download the human genome database using the following script within the 4kneaddata directory.
 
 <pre lang="bash"> 
 module load anaconda3/2025.06
@@ -127,7 +129,7 @@ module load trf/4.09.1
 kneaddata_database --download human_genome bowtie2 ./human_genome
 </pre>
 
-Una vez descargada la base de datos utilizamos el siguiente script para utilizar la herramienta 
+Once the database has been downloaded, we use the following script to run the sequence filtering in order to remove contamination from human sequences.
 
 <pre lang="bash"> kneaddata \
   -i1 ../3cutadapt/Dlaeve_R1_cut.fastq \
@@ -137,17 +139,35 @@ Una vez descargada la base de datos utilizamos el siguiente script para utilizar
   -t 4 \
   --output-prefix Dlaeve1 \
   --remove-intermediate-output \
-  --log ./Dlaeve1_output/Dlaeve_kneaddata.log \
-  --trf /ruta/a/binary/trf/trf_link </pre>
+  --log ./Dlaeve1_output/Dlaeve_kneaddata.log
+</pre>
+
+In this step, the tool generates a separate directory for each paired-end sample. Inside each directory, we will find the filtered sequences: *_paired_R1.fastq and *_paired_R2.fastq.
 
 # 5Kraken2
+En la siguiente etapa utilizamos Kraken2 para la asignacion taxonomica. Primero es necesario tener descargada la base de datos de Kraken2 y configurar para poder utilizarla. En nuestro caso se realizó con el siguiente script, mediante la descarga de la base de datos estandar y libreririas adicionales. Asi como la construcción de la libreria que sea util para la asignación taxonomica.
 
 <pre lang="bash"> module load kraken/2.0.8-beta </pre>
 
-<pre lang="bash"> kraken2 --db database_protzfungplant --threads 20 \
-  --paired Seq_R1_cut.fastq /Seq_R2_cut.fastq \
- --output Seq/tax/Mollusk.kraken \
- --report Seq/tax/Mollusk.report </pre>
+<pre lang="bash">
+kraken2-build --standard --db kraken2_db --threads 32
+kraken2-build --download-library fungi --threads 32 --db kraken2_db
+kraken2-build --download-library plant --threads 32 --db kraken2_db
+kraken2-build --download-library protozoa --threads 32 --db kraken2_db
+kraken2-build --build --threads 32 --db kraken2_db
+</pre>
+
+Una vez creada la base de datos, utilizamos el siguiente script para la asignacion taxonomica.
+
+<pre lang="bash"> 
+kraken2 --db kraken2_db --threads 32 \
+--paired ../Dlaeve1/_R1.fastq ../Dlaeve1/Dlaeve_R2_cut.fastq \
+--output Seq/tax/Mollusk.kraken \
+--report Seq/tax/Mollusk.report </pre>
+
+kraken2 --db kraken2_db --threads 16 \
+  --paired ../4cutadapt/C1_R1_cut.fastq ../4cutadapt/C1_R2_cut.fastq \
+  --unclassified-out C1_unclassf_R#.fq.gz
 
 # 6SPAdes
 
