@@ -23,6 +23,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`Trimmomatic`](http://www.usadellab.org/cms/?page=trimmomatic) `v0.39`
 - [`Cutadapt`]() `v0.00`
 - [`KneadData`](https://huttenhower.sph.harvard.edu/kneaddata/) `v0.12.3`
+
   _Requiere_:  
   - Trimmomatic `v0.33`  
   - Bowtie `v2.5.4`  
@@ -34,6 +35,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 
 
 # 0Raw_seq
+Consider you have illumina paired-end sequence reads. Below, we show a correct strucutre of four lines from raw reads. The first line contain the ID of sequence and sequencing information. The second line contain the real secuence of nucleotides. The third line has a (+) symbol which separate the nucleotide sequence of quality information. The fourth line contain the quality score of each nucleotide. In this last line the letters and symbols are coded as ASCII characters. You can check the quality of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
 
 Dlaeve1_R1.fastq
 
@@ -42,7 +44,6 @@ Dlaeve1_R1.fastq
 ACCTTGACCCGTATGATAAAACAATCTTCAGCATNGTNNNNNCCAACAGCCATCTCTTNGACATCCATCGNTANGNTNGNCGGCTGATTGTCCTCACCAGTCTCGACCCTGGTCAATACNNNGTTAACGTCAGTGTCTCTGACGGAAAG
 +
 AAAAAEEAEEEEEEEEEEEEEEEEEEEEEEEEEE#EE#####AEEE/EEEEAEEEEEE#/EEEEEAEEEA#EE#/#E#/#EE/EEEEEEEEEAEEEE<EEEEEE<EE<EEEEE<EEEE/###/EEEE<AAEEEEEEEEEE<<EEE<EEE
-@NB501300:44:HMTKLBGXJ:1:11101:9443:1062 1:N:0:CTCGCTTCGG+TTGACTAGTA
 ```
 
 
