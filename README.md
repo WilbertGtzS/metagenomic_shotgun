@@ -116,15 +116,16 @@ module load bowtie/2.5.4
 module load trf/4.09.1 </pre>
 
 <pre lang="bash"> kneaddata \
-          -i1 "$R1" \
-          -i2 "$R2" \
-          -o "$SAMPLE_OUT" \
-          -db "$DB_PATH" \
-          -t "$THREADS" \
-          --output-prefix "$BASE" \
-          --remove-intermediate-output \
-          --log "$SAMPLE_OUT/${BASE}_kneaddata.log" \
-          --trf /mnt/data/alfredvar/wgutierrez/trf_link </pre>
+  -i1 ../3cutadapt/Dlaeve_R1_cut.fastq \
+  -i2 ../3cutadapt/Dlaeve_R2_cut.fastq \
+  -o ./Dlaeve_output \
+  -db /ruta/a/la/base/de/datos/kneaddata_db \
+  -t 4 \
+  --output-prefix Dlaeve \
+  --remove-intermediate-output \
+  --log ./4kneaddata/Dlaeve_output/Dlaeve_kneaddata.log \
+  --trf /mnt/data/alfredvar/wgutierrez/trf_link </pre>
+
 
 
 # 5Kraken2
