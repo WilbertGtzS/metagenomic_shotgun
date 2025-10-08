@@ -11,7 +11,7 @@ This was equally contributor by:
 
 **Lozano-Flores Carlos** [lozancarlos@yahoo.com] []
 
-**Alfredo Varela-Echavarría** [avarela@unam.mx] []
+**Varela-Echavarría Alfredo** [avarela@unam.mx] []
 
 This workflow was completed in DNA computing cluster from Laboratorio Nacional de Visualización Científica Avanzada (LAVIS) https://lavis.unam.mx/ at Universidad Nacional Autónoma de México (UNAM), Juriquilla, Querétaro, México. 🇲🇽
 
@@ -191,14 +191,25 @@ In the next step, the sequences obtained from KneadData were used to assemble me
                      -o Dlaeve1 -t 16 -m 200 </pre>
 
 # 7Prodigal
-<pre lang="bash"> module load prodigal/2.6.3 </pre>
-<pre lang="bash"> prodigal -i /mnt/data/alfredvar/wgutierrez/5metaspades/BC59/contigs.fasta \
-              -a proteins_BC59.faa -d genes_BC59.fna -f gff -o prodigal_BC59.gff -p meta </pre>
-# 8eggNOG
-<pre lang="bash"> module load anaconda3/2025.06 </pre>
-<pre lang="bash"> source activate eggnog-mapper-2.1.13 </pre>
-<pre lang="bash"> emapper.py -i ../7prodigal/proteins*.faa --data_dir /route/to/database/eggnog_db_v2.1.9 --cpu 16 --output sp_mollusk </pre>
+In the next step, the Prodigal tool was used to predict coding regions and obtain the open reading frames (ORFs). This was done using the following script.
 
+<pre lang="bash"> module load prodigal/2.6.3 </pre>
+<pre lang="bash"> prodigal -i ../6metaspades/Dlaeve1/contigs.fasta \
+              -a proteins_Dlaeve1.faa -d genes_Dlaeve1.fna -f gff -o prodigal_Dlaeve1.gff -p meta </pre>
+# 8eggNOG
+The next step consists of functional annotation using eggNOG-mapper. First, it is important to have the database downloaded, so it is done as follows:
+
+<pre lang="bash"> 
+module load anaconda3/2025.06
+source activate eggnog-mapper-2.1.13 </pre>
+
+<pre lang="bash"> download_eggnog_data.py -F -P -M -H -d HMMER_DBS --dbname eggnog_db -y </pre>
+
+Once the database has been downloaded, the functional analysis is carried out using the following script.
+
+<pre lang="bash"> emapper.py -i ../7prodigal/proteins_Dlaeve1.faa --data_dir ./eggnog_db --cpu 16 --output sp_mollusk </pre>
+
+Finally, the annotation file is generated in this format, and from this file, appropriate graphs are created according to the interests of each study.
 
 | query                                 | seed_ortholog     | evalue   | score | eggNOG_OGs                                                                                   | max_annot_lvl            | COG_category | Description               | Preferred_name | GOs | EC | KEGG_ko | KEGG_Pathway | KEGG_Module | KEGG_Reaction | KEGG_rclass | BRITE | KEGG_TC | CAZy | BiGG_Reaction | PFAMs   |
 |--------------------------------------|-------------------|----------|-------|----------------------------------------------------------------------------------------------|---------------------------|---------------|---------------------------|----------------|-----|----|----------|---------------|--------------|----------------|--------------|--------|----------|------|----------------|---------|
