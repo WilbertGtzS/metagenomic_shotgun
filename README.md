@@ -58,20 +58,20 @@ AAAAAEEAEEEEEEE###EEE<EEEAE/EEEEEA<<EE/AE/EE<EEEEEAAEEEE/EAEEEEEEAEEEEEEEEE/AE<E
 Considerar that...
 
 <pre lang="bash"> module load fastqc/0.11.3 </pre>
-<pre lang="bash"> fastqc ../0Raw_seq/*.fastq -o . -t 4 </pre>
+<pre lang="bash"> fastqc ../0Raw_seq/Dlaeve1_R1.fastq -o . -t 4 </pre>
+<pre lang="bash"> fastqc ../0Raw_seq/Dlaeve1_R2.fastq -o . -t 4 </pre>
 
 # 2Trimmomatic
 
-<pre lang="bash"> module load fastp/0.20.0 </pre>
 <pre lang="bash"> module load trimmomatic/0.39 </pre>
 
-<pre lang="bash"> trimmomatic PE -threads 2 \
-   ../2rcorrector/unfixrm_C1_S36_R1_001.cor.fq \
-   ../2rcorrector/unfixrm_C1_S36_R2_001.cor.fq \
-   trimmed_C1_R1.paired.fq.gz \
-   trimmed_C1_R1.unpaired.fq.gz \
-   trimmed_C1_R2.paired.fq.gz \
-   trimmed_C1_R2.unpaired.fq.gz \
+<pre lang="bash"> trimmomatic PE -threads 4 \
+   ../0Raw_seq/Dlaeve1_R1.fastq \
+   ../0Raw_seq/Dlaeve1_R2.fastq \
+   trimmed_Dlaeve1_R1.paired.fq.gz \
+   trimmed_Dlaeve1_R1.unpaired.fq.gz \
+   trimmed_Dlaeve1_R2.paired.fq.gz \
+   trimmed_Dlaeve1_R2.unpaired.fq.gz \
    ILLUMINACLIP:TruSeq3_Illumina.fa:2:28:10 LEADING:28 TRAILING:28 SLIDINGWINDOW:4:28 MINLEN:50 </pre>
 
 TruSeq3_Illumina.fa
