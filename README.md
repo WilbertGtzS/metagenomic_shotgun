@@ -35,7 +35,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 
 
 # 0Raw_seq
-Consider you have illumina paired-end sequence reads. Below, we show a correct strucutre of four lines from raw reads. The first line contain the ID of sequence and sequencing information. The second line contain the real secuence of nucleotides. The third line has a (+) symbol which separate the nucleotide sequence of quality information. The fourth line contain the quality score of each nucleotide. In this last line the letters and symbols are coded as ASCII characters. You can check the quality of each nucleotide here: https://www.drive5.com/usearch/manual/quality_score.html
+Suppose you have Illumina paired-end sequencing reads. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here:: https://www.drive5.com/usearch/manual/quality_score.html
 
 Dlaeve1_R1.fastq
 
