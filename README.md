@@ -33,6 +33,7 @@ Below, there are the bioinformatic tools and it's respective used version:
 - [`Prodigal`](https://github.com/hyattpd/Prodigal) `v2.6.3`
 - [`eggNOG`](http://eggnog-mapper.embl.de/) `v2.1.13`
 
+Este flujo de trabajo está diseñado para realizar los análisis por carpetas separadas. Por lo tanto, tendremos una carpeta para cada paso y cada script está indicado para realizarse dentro de cada directorio. Además, este análisis ha sido desarrollado dentro de un cluster institucional por lo cual el llamadado de cada herramienta se realiza mediante "module load".  
 
 # 0Raw_seq
 Suppose you have Illumina paired-end sequencing reads. Below is an example showing the correct structure of four lines from raw reads. The first line contains the sequence identifier and sequencing metadata. The second line shows the actual nucleotide sequence. The third line includes a plus sign (+), which separates the nucleotide sequence from the quality information. The fourth line contains the quality scores for each nucleotide. In this last line, the letters and symbols represent ASCII-encoded quality scores. You can check the quality value of each nucleotide here:: https://www.drive5.com/usearch/manual/quality_score.html
