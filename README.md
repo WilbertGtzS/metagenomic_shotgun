@@ -227,27 +227,30 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │ └── Dlaeve1_R2.fastq.html
 ├── 📁2trimmomatic/
 │ ├── Next_Illumina.fa
-│ ├── file2_2.txt
-│ └── file2_3.txt
+│ ├── trimmed_Dlaeve1_R1.paired.fq.gz
+│ └── trimmed_Dlaeve1_R2.paired.fq.gz
 ├── 📁3cutadapt/ 
-│ ├── file2_2.txt
-│ └── file2_3.txt
+│ ├── Dlaeve_R1_cut.fastq
+│ └── Dlaeve_R2_cut.fastq
 ├── 📁4kneaddata/
-│ ├── file4_1.txt
-│ ├── file4_2.txt
+│ ├── Dlaeve1/Dlaeve_R1.fastq
+│ ├── Dlaeve1/Dlaeve_R1.fastq
 │ └── 📁human_genome/
 ├── 📁5kraken2/
-│ ├── file5_1.txt
-│ ├── file5_2.txt
-│ ├── file5_3.txt
+│ ├── Dlaeve1.kraken
+│ ├── Dlaeve1.report
+│ ├── Dlaeve1.biom
 │ └── 📁kraken2_db/
 ├── 📁6spades/
 │ └── 📁Dlaeve/
 │ └── file6_1.txt
 ├── 📁7prodigal/
-│ ├── file7_1.txt
-│ └── file7_2.txt
-├── 📁8eggnog/ # Vacío
+│ ├── proteins_Dlaeve1.faa
+│ ├── genes_Dlaeve1.fna
+│ └── prodigal_Dlaeve1.gff
+├── 📁8eggnog/
+│ └── 📁eggnog_db/
+│ └── file6_1.txt
 └── 📁/
 ├── file9_1.txt
 └── file9_2.txt
