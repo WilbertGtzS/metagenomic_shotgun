@@ -248,10 +248,8 @@ Finally, the annotation file is generated in this format, and from this file, ap
 │ ├── proteins_Dlaeve1.faa
 │ ├── genes_Dlaeve1.fna
 │ └── prodigal_Dlaeve1.gff
-├── 📁8eggnog/
-│ └── 📁eggnog_db/
-│ └── file6_1.txt
-└── 📁/
-├── file9_1.txt
-└── file9_2.txt
+└── 📁8eggnog/
+  └── 📁eggnog_db/
+  └── Dlaeve1.emapper.annotations
+
 ```
