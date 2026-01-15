@@ -173,8 +173,7 @@ kraken-biom/1.0.1
 </pre>
 
 <pre lang="bash">
-kraken-biom \
-  --report-files Dlaeve1.report \
+kraken-biom Dlaeve1.report \
   --output Dlaeve1.biom
 </pre>
 
